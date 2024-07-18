@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="986.0" stylesheets="@dashboardDesign.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.vervebridge.proj.libmanagementsystem.DashboardController">
+   <children>
+      <BorderPane layoutX="393.0" layoutY="191.0" prefHeight="600.0" prefWidth="990.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="102.0" prefWidth="986.0" styleClass="semiTop-form" stylesheets="@dashboardDesign.css" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="45.0" prefWidth="986.0" styleClass="system-control-btn" stylesheets="@dashboardDesign.css" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button fx:id="close" alignment="CENTER" layoutX="926.0" layoutY="2.0" mnemonicParsing="false" onAction="#close" prefHeight="24.0" prefWidth="33.0" styleClass="close-btn" stylesheets="@dashboardDesign.css" text="x" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+
+                        </Button>
+                        <Button fx:id="minimize" layoutX="912.0" layoutY="2.0" mnemonicParsing="false" onAction="#minimize" prefHeight="24.0" prefWidth="33.0" styleClass="minimize-btn" stylesheets="@dashboardDesign.css" text="-" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="2.0">
+
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="85.0" layoutY="60.0" text="Library Management System" textFill="WHITE" AnchorPane.topAnchor="60.0">
+                     <font>
+                        <Font name="Roboto Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="currentForm_label" alignment="CENTER_RIGHT" layoutX="782.0" layoutY="56.0" text="Available Books" textFill="WHITE">
+                     <font>
+                        <Font name="Ubuntu Bold Italic" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="473.0" layoutY="64.0" text="Student Portal" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Medium" size="20.0" />
+                     </font>
+                  </Label>
+                  <Line endX="208.0" endY="1.0" layoutX="236.0" layoutY="90.0" startX="208.0" startY="-33.0" />
+                  <Button id="arrow_btn" fx:id="arrow_btn" layoutX="8.0" layoutY="53.0" mnemonicParsing="false" onAction="#sliderArrow" prefHeight="39.0" prefWidth="59.0" styleClass="menu-btn" text="&lt;">
+                     <font>
+                        <Font name="Monospaced Bold" size="17.0" />
+                     </font>
+                  </Button>
+                  <Button id="menu_btn" fx:id="bars_btn" layoutX="8.0" layoutY="54.0" mnemonicParsing="false" onAction="#sliderMenu" prefHeight="39.0" prefWidth="59.0" styleClass="menu-btn" text="Menu">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Button>
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <AnchorPane prefHeight="593.0" prefWidth="986.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane id="available_books_form" fx:id="available_books_form" layoutX="10.0" layoutY="11.0" prefHeight="498.0" prefWidth="777.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane fx:id="available_book_details" layoutX="5.0" layoutY="4.0" prefHeight="491.0" prefWidth="252.0" styleClass="card-form">
+                           <children>
+                              <AnchorPane fx:id="book_image" layoutX="53.0" layoutY="27.0" prefHeight="180.0" prefWidth="150.0" styleClass="image-card" stylesheets="@dashboardDesign.css">
+                                 <children>
+                                    <ImageView fx:id="available_books_img" fitHeight="182.0" fitWidth="152.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true" styleClass="image-card" />
+                                 </children>
+                              </AnchorPane>
+                              <Button fx:id="save_btn" layoutX="21.0" layoutY="274.0" mnemonicParsing="false" onAction="#saveBooks" prefHeight="33.0" prefWidth="63.0" styleClass="save-btn" text="Save" />
+                              <Button fx:id="take_btn" layoutX="179.0" layoutY="274.0" mnemonicParsing="false" onAction="#abTakeButton" prefHeight="33.0" prefWidth="63.0" styleClass="take-btn" text="Take" />
+                              <Label fx:id="available_books_title" alignment="CENTER" layoutX="19.0" layoutY="220.0" prefHeight="23.0" prefWidth="220.0">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="available_books_table" layoutX="265.0" layoutY="5.0" prefHeight="490.0" prefWidth="501.0" styleClass="card-form">
+                           <children>
+                              <TableView fx:id="available_books_table_view" layoutX="14.0" layoutY="13.0" onMouseClicked="#selectAvailableBooks" prefHeight="466.0" prefWidth="478.0">
+                                <columns>
+                                  <TableColumn fx:id="col_ab_book_title" prefWidth="130.0" text="Book Title" />
+                                  <TableColumn fx:id="col_ab_author" prefWidth="96.0" text="Author" />
+                                    <TableColumn fx:id="col_ab_book_category" prefWidth="124.0" text="Book Category" />
+                                    <TableColumn fx:id="col_ab_published_date" minWidth="0.0" prefWidth="123.0" text="Published Date" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <Separator layoutX="259.0" layoutY="14.0" orientation="VERTICAL" prefHeight="468.0" prefWidth="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane id="issue_form" fx:id="issue_form" prefHeight="498.0" prefWidth="773.0" stylesheets="@dashboardDesign.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Separator layoutX="265.0" layoutY="16.0" orientation="VERTICAL" prefHeight="470.0" prefWidth="5.0" />
+                        <AnchorPane layoutX="5.0" layoutY="4.0" prefHeight="491.0" prefWidth="252.0" styleClass="card-form">
+                           <children>
+                              <AnchorPane layoutX="58.0" layoutY="14.0" prefHeight="180.0" prefWidth="130.0" styleClass="image-card" stylesheets="@dashboardDesign.css">
+                                 <children>
+                                    <ImageView fx:id="take_image_view" fitHeight="180.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="16.0" layoutY="210.0" prefHeight="148.0" prefWidth="216.0" styleClass="card-form">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="22.0" text="Title :" />
+                                    <Label layoutX="14.0" layoutY="52.0" text="Author :" />
+                                    <Label layoutX="14.0" layoutY="81.0" text="Genre :" />
+                                    <Label layoutX="15.0" layoutY="111.0" text="Published Date : " />
+                                    <Label fx:id="take_titleLabel" layoutX="53.0" layoutY="22.0" text="Label" />
+                                    <Label fx:id="take_authorLabel" layoutX="71.0" layoutY="53.0" text="Label" />
+                                    <Label fx:id="take_GenreLabel" layoutX="67.0" layoutY="82.0" text="Label" />
+                                    <Label fx:id="take_publishedDateLabel" layoutX="128.0" layoutY="111.0" text="Label" />
+                                 </children>
+                              </AnchorPane>
+                              <Button fx:id="take_clearBtn" layoutX="13.0" layoutY="407.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="63.0" styleClass="clear-btn" text="Clear" />
+                              <Button fx:id="take_takeBtn" layoutX="169.0" layoutY="408.0" mnemonicParsing="false" onAction="#takeBook" prefHeight="41.0" prefWidth="63.0" styleClass="take-btn" text="Take" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="266.0" layoutY="5.0" prefHeight="490.0" prefWidth="500.0" styleClass="card-form" stylesheets="@dashboardDesign.css">
+                           <children>
+                              <Label layoutX="16.0" layoutY="10.0" text="Student Details:">
+                                 <font>
+                                    <Font name="Ubuntu Mono Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="47.0" layoutY="59.0" text="Student ID :">
+                                 <font>
+                                    <Font name="Monospaced Regular" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="take_studentIdLabel" layoutX="220.0" layoutY="59.0" prefHeight="18.0" prefWidth="162.0" styleClass="label_take" text="Label" />
+                              <Label layoutX="48.0" layoutY="108.0" text="First Name:">
+                                 <font>
+                                    <Font name="Monospaced Regular" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="take_firstName" layoutX="221.0" layoutY="105.0" prefHeight="18.0" prefWidth="162.0" styleClass="textfield_take" />
+                              <Label layoutX="48.0" layoutY="155.0" text="Last Name:">
+                                 <font>
+                                    <Font name="Monospaced Regular" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="take_lastName" layoutX="221.0" layoutY="152.0" prefHeight="18.0" prefWidth="162.0" styleClass="textfield_take" />
+                              <Label layoutX="48.0" layoutY="196.0" text="Gender:">
+                                 <font>
+                                    <Font name="Monospaced Regular" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="19.0" layoutY="244.0" text="Book Details:">
+                                 <font>
+                                    <Font name="Ubuntu Mono Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="48.0" layoutY="285.0" text="Book Title:">
+                                 <font>
+                                    <Font name="Monospaced Regular" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="take_bookTitle" layoutX="221.0" layoutY="282.0" onAction="#findBook" prefHeight="18.0" prefWidth="162.0" styleClass="textfield_take" />
+                              <Label layoutX="47.0" layoutY="328.0" text="Issued Date:">
+                                 <font>
+                                    <Font name="Monospaced Regular" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="take_issuedDate" layoutX="221.0" layoutY="328.0" prefHeight="18.0" prefWidth="162.0" styleClass="label_take" text="Label" />
+                              <ComboBox fx:id="take_gender" layoutX="221.0" layoutY="200.0" onAction="#gender" prefHeight="24.0" prefWidth="162.0" promptText="Select -" styleClass="textfield_take" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane id="returnBook_form" fx:id="returnBook_form" layoutX="277.0" layoutY="13.0" prefHeight="501.0" prefWidth="773.0" stylesheets="@dashboardDesign.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane fx:id="available_books_table1" layoutX="279.0" layoutY="7.0" prefHeight="485.0" prefWidth="489.0" styleClass="card-form">
+                           <children>
+                              <TableView fx:id="return_tableView" layoutX="7.0" layoutY="44.0" onMouseClicked="#selectReturnBook" prefHeight="435.0" prefWidth="471.0">
+                                 <columns>
+                                    <TableColumn fx:id="return_bookTitle" prefWidth="158.0" text="Book Title" />
+                                    <TableColumn fx:id="return_bookAuthor" prefWidth="72.0" text="Author" />
+                                    <TableColumn fx:id="return_bookType" prefWidth="120.0" text="Book Category" />
+                                    <TableColumn fx:id="return_issue_date" minWidth="0.0" prefWidth="123.0" text="Issue Date" />
+                                 </columns>
+                              </TableView>
+                              <Label layoutX="14.0" layoutY="14.0" text="Issued Books:">
+                                 <font>
+                                    <Font name="Ubuntu Mono Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="available_book_details1" layoutX="6.0" layoutY="7.0" prefHeight="485.0" prefWidth="257.0" styleClass="card-form">
+                           <children>
+                              <AnchorPane fx:id="book_image1" layoutX="53.0" layoutY="27.0" prefHeight="180.0" prefWidth="150.0" styleClass="image-card" stylesheets="@dashboardDesign.css">
+                                 <children>
+                                    <ImageView fx:id="return_image_view" fitHeight="182.0" fitWidth="152.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true" styleClass="image-card" />
+                                 </children>
+                              </AnchorPane>
+                              <Button fx:id="return_btn" layoutX="89.0" layoutY="277.0" mnemonicParsing="false" onAction="#returnBooks" prefHeight="46.0" prefWidth="79.0" styleClass="return-btn" text="Return" />
+                           </children>
+                        </AnchorPane>
+                        <Separator layoutX="266.0" layoutY="20.0" orientation="VERTICAL" prefHeight="459.0" prefWidth="13.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane id="savedBook_form" fx:id="savedBook_form" layoutX="167.0" layoutY="97.0" prefHeight="498.0" prefWidth="773.0" stylesheets="@dashboardDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutX="5.0" layoutY="5.0" prefHeight="262.0" prefWidth="763.0" styleClass="card-form">
+                           <children>
+                              <TableView fx:id="savedBook_tableView" layoutX="230.0" layoutY="10.0" onMouseClicked="#selectSavedBooks" prefHeight="244.0" prefWidth="523.0">
+                                <columns>
+                                  <TableColumn fx:id="savedBook_title" prefWidth="119.0" text="Book Title" />
+                                  <TableColumn fx:id="savedBook_author" prefWidth="126.0" text="Author" />
+                                    <TableColumn fx:id="savedBook_type" prefWidth="156.0" text="Book Type" />
+                                    <TableColumn fx:id="savedBook_publishedDate" prefWidth="121.0" text="Published Date" />
+                                </columns>
+                              </TableView>
+                              <AnchorPane layoutX="40.0" layoutY="14.0" prefHeight="180.0" prefWidth="150.0" styleClass="image-card" stylesheets="@dashboardDesign.css">
+                                 <children>
+                                    <ImageView fx:id="savedBook_imgView" fitHeight="180.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" styleClass="image-card" />
+                                 </children>
+                              </AnchorPane>
+                              <Button fx:id="unsaveBtn" layoutX="72.0" layoutY="206.0" mnemonicParsing="false" onAction="#unsaveBooks" prefHeight="42.0" prefWidth="88.0" styleClass="unsave-btn" text="Unsave" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="5.0" layoutY="294.0" prefHeight="200.0" prefWidth="764.0" styleClass="card-form">
+                           <children>
+                              <ImageView fitHeight="199.0" fitWidth="769.0" layoutX="4.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/book_quote.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <Separator layoutX="18.0" layoutY="279.0" prefHeight="7.0" prefWidth="738.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+         <left>
+            <AnchorPane fx:id="nav_form" prefHeight="498.0" prefWidth="213.0" styleClass="nav-form" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane fx:id="nav_form_profile" layoutX="6.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Circle fx:id="circle_image" fill="#54565700" layoutX="99.0" layoutY="87.0" radius="79.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" />
+                        <Button fx:id="edit_btn" layoutX="49.0" layoutY="37.0" mnemonicParsing="false" onAction="#insertImage" prefHeight="100.0" prefWidth="100.0" styleClass="edit-btn" text=" Select img" textFill="#5e5e5e">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="58.0" layoutY="175.0" text="Welcome">
+                           <font>
+                              <Font name="FreeSans Bold Oblique" size="19.0" />
+                           </font></Label>
+                        <Label id="studentId_label" fx:id="studentId_label" layoutX="72.0" layoutY="201.0" prefHeight="27.0" prefWidth="124.0" textFill="WHITE" underline="true">
+                           <font>
+                              <Font name="FreeSans Bold Oblique" size="18.0" />
+                           </font></Label>
+                        <Label layoutX="35.0" layoutY="207.0" text="#ID :" />
+                     </children>
+                  </AnchorPane>
+                  <Button fx:id="signout_btn" layoutX="77.0" layoutY="457.0" mnemonicParsing="false" onAction="#logout" styleClass="logout-btn" text="Logout" />
+                  <Button fx:id="saved_books_btn" layoutX="37.0" layoutY="398.0" mnemonicParsing="false" onAction="#navButtonDesign" prefHeight="29.0" prefWidth="151.0" styleClass="nav-btn" text="Saved Books" textAlignment="CENTER" />
+                  <Button fx:id="return_book_btn" layoutX="37.0" layoutY="354.0" mnemonicParsing="false" onAction="#navButtonDesign" prefHeight="29.0" prefWidth="152.0" styleClass="nav-btn" text="Return Books" textAlignment="CENTER" />
+                  <Button fx:id="issue_book_btn" layoutX="37.0" layoutY="306.0" mnemonicParsing="false" onAction="#navButtonDesign" prefHeight="29.0" prefWidth="154.0" styleClass="nav-btn" text="Issue Books" textAlignment="CENTER" />
+                  <Button fx:id="available_books_btn" layoutX="37.0" layoutY="260.0" mnemonicParsing="false" onAction="#navButtonDesign" styleClass="nav-btn" text="Available Books" textAlignment="CENTER" />
+                  <Line endX="84.0" layoutX="115.0" layoutY="235.0" startX="-100.0" stroke="WHITE" />
+               </children>
+            </AnchorPane>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>
